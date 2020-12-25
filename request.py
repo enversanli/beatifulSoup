@@ -1,5 +1,8 @@
 import requests
 from bs4 import BeautifulSoup
+
+import Tulpar
+
 class Scrape:
 
         def myfunc():
@@ -22,6 +25,7 @@ result = Scrape.findIn("ul", content, "tag")
 print("-----------------")
 print(result)
 print("-----------------")
+tulpar = Tulpar()
 
 print("done")
 
