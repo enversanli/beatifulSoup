@@ -13,18 +13,23 @@ class Scrape:
             soup = BeautifulSoup(page.content)
             return soup
             
-        def findIn(key, content, className):
+        def findbyClass(key, content, className):
             return content.find_all(key, {"class":className})
-
+        
+        def findById(key, content, id):
+            return content.find_all(key, {"id":id})
 
 url = "https://enversanli.com"
 scr = Scrape()
 content = Scrape.getContent(url)
-
-result = Scrape.findIn("ul", content, "tag")
+getWithId = Scrape.findById("ul", content, "demo1")
+result = Scrape.findbyClass("ul", content, "tag")
 print("-----------------")
 print(result)
 print("-----------------")
+
+print(getWithId)
+
 tulpar = Tulpar()
 
 print("done")
